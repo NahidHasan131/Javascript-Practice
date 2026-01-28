@@ -6,10 +6,20 @@
     <title>Document</title>
 </head>
 <body>
-    <input type="text" placeholder="Input your Id" id="StId">
+    <!-- <input type="text" placeholder="Input your Id" id="StId">
     <input type="text" placeholder="Input your Name" id="name">
     <button type="submit" onclick="addToStorage()">Submit</button>
     <button onclick="handleClear()">Clear</button>
-    <script src="./storage.js"></script>
+    <script src="./storage.js"></script> -->
+
+    <button id="clickHandle">click Handle</button>
+
+    <script>
+        const clickHandle = document.getElementById('clickHandle');
+        clickHandle.addEventListener('click', ()=>{
+            alert("Button Clicked");
+        })
+    </script>
+
 </body>
 </html>

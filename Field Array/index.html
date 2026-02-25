@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Field Array</title>
+    <!-- Font Awesome -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-gray-100">
+
+    <div class="w-8/12  mx-auto bg-white shadow p-8 my-15 rounded">
+        <div class="grid grid-cols-4 gap-6 border-b border-gray-300 py-2 font-semibold">
+            <p>Products Type :</p>
+            <p>Description :</p>
+            <p>Total :</p>
+            <p></p>
+        </div>
+        
+        <div class="grid grid-cols-4 gap-6 my-3" id="Item">
+            <select class="border border-gray-300 rounded py-2 px-4 text-gray-600">
+                <option value="" selected>Select Type</option>
+                <option value="Hisab Nikash">Hisab Nikash</option>
+                <option value="Bayanno Pay">Bayanno Pay</option>
+                <option value="Netfee">Netfee</option>
+                <option value="Silicon ISP">Silicon ISP</option>
+                <option value="Agrosys">Agrosys</option>
+                <option value="Bill BD">Bill BD</option>
+                <option value="Orderly">Orderly</option>
+            </select>
+            <input type="text"  placeholder="Product description" class="border border-gray-300 rounded py-2 px-4 text-gray-600"/>
+            <input type="text"   placeholder="Enter product quantity" class="border border-gray-300 rounded py-2 px-4 text-gray-600"/>
+            <button type="button" class="bg-red-300 text-red-600 rounded-full cursor-pointer" id="removeItem" onclick="this.parentNode.remove()">
+                <i class="fa-solid fa-trash"></i>
+            </button>
+        </div>
+
+        <div id="items-container">
+            
+        </div>
+        
+        <button type="button" class="text-blue-600 cursor-pointer" id="addItem">
+            <i class="fa-solid fa-plus"></i> Add Product
+        </button>
+    </div>
+
+    <script>
+        const Item = document.getElementById('Item');
+        const addItem = document.getElementById('addItem');
+        const ItemContainer = document.getElementById('items-container');
+
+        addItem.addEventListener('click', () => {
+            const clone = Item.cloneNode(true);
+            ItemContainer.appendChild(clone);
+        });
+                
+        
+    </script>
+    
+</body>
+</html>

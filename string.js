@@ -1,12 +1,38 @@
-let str = "bangladesh";
+// let str = "bangladesh";
 
-let letterFrequency = {};
+// let letterFrequency = {};
 
-for(let i = 0; i<str.length; i++){
-    letterFrequency[str[i]] = (letterFrequency[str[i]] || 0) + 1;
+// for(let i = 0; i<str.length; i++){
+//     letterFrequency[str[i]] = (letterFrequency[str[i]] || 0) + 1;
+// }
+// console.log(letterFrequency); 
+
+
+
+let reduxState = {
+    eid: "E102",
+    ename: "Jack",
+    eaddress: "New York",
+    salary: 0
 }
-console.log(letterFrequency); 
 
-
-
+function reducer(state, action ){
+   if(action.type === "post/increment"){
+     return {...state, salary: state.salary + 1}
+   }
+   else if(action.type === "post/decrement"){
+     return {...state, salary: state.salary - 1}
+   }
+   else if(action.type === "post/incrementby"){
+     return {...state, salary: state.salary + action.payload}
+   }
+   return state
+}
+console.log(reduxState)
+reduxState = reducer(reduxState, {type: "post/increment"});
+console.log(reduxState)
+reduxState = reducer(reduxState, {type: "post/decrement"});
+console.log(reduxState)
+reduxState = reducer(reduxState, {type: "post/incrementby", payload: 10});
+console.log(reduxState)
 
